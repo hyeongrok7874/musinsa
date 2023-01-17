@@ -11,7 +11,7 @@ Provide ranking of musinsa.
 import { dailyRanking } from "musinsa";
 
 // CommonJS
-const { dailyRanking } = require("./index.cjs");
+const { dailyRanking } = require("musinsa");
 ```
 
 return data
