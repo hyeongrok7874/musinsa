@@ -1,6 +1,6 @@
 {
   "name": "musinsa",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Provide ranking of musinsa.",
   "main": "index.js",
   "author": "hyeongrok7874",
@@ -11,5 +11,9 @@
       "require": "./index.cjs",
       "import": "./index.mjs"
     }
+  },
+  "dependencies": {
+    "axios": "^1.2.2",
+    "cheerio": "^1.0.0-rc.12"
   }
 }
