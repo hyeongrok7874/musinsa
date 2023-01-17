@@ -1,7 +1,7 @@
 import axios from "axios";
 import cheerio from "cheerio";
 
-const MUSINSA_DAILY = "https://www.musinsa.com/ranking/best?period=day";
+const MUSINSA_DAILY = "/ranking/best?period=day";
 const GET_IMG = "a.img-block > img";
 const GET_BRAND = "div.article_info p.item_title > a";
 const GET_NAME_AND_LINK = "div.article_info p.list_info > a";

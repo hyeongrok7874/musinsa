@@ -1,6 +1,6 @@
 {
   "name": "musinsa",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Provide ranking of musinsa.",
   "main": "index.js",
   "author": "hyeongrok7874",
@@ -16,5 +16,5 @@
     "axios": "^1.2.2",
     "cheerio": "^1.0.0-rc.12"
   },
-  "proxy": "https://www.musinsa.com/ranking/best?period=day"
+  "proxy": "https://www.musinsa.com"
 }
