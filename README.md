@@ -28,3 +28,9 @@ return data
   ...
 ]
 ```
+
+## caution
+
+콘텐츠는 출처를 밝히고(무신사닷컴 표기 및 www.musinsa.com 링크 포함 필수) 비상업적인 용도에서만 활용하실 수 있습니다.
+
+[무신사닷컴](https://www.musinsa.com/)
