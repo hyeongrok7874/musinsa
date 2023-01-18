@@ -5,4 +5,4 @@ export interface DailyRanking {
     price: string;
     link?: string;
 }
-export declare const getDailyRanking: () => Promise<DailyRanking[] | undefined>;
+export declare const getDailyRanking: () => Promise<DailyRanking[] | []>;

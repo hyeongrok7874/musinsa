@@ -63,15 +63,13 @@ var getDailyRanking = function () { return __awaiter(void 0, void 0, void 0, fun
                         link: $_1(item).find(GET_NAME_AND_LINK).attr("href"),
                     };
                 });
-                return [2 /*return*/, dailyRanking_1];
+                return [2 /*return*/, dailyRanking_1.length > 0 ? dailyRanking_1 : []];
             case 2:
                 e_1 = _a.sent();
-                console.log(e_1);
-                return [3 /*break*/, 3];
+                throw e_1;
             case 3: return [2 /*return*/];
         }
     });
 }); };
-// module.exports = { getDailyRanking };
 exports.getDailyRanking = getDailyRanking;
 export {};
