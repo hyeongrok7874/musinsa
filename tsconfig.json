@@ -1,11 +1,8 @@
 {
+  "extends": "./tsconfig-base.json",
   "compilerOptions": {
-    "target": "es5",
-    "strict": true,
-    "outDir": "./dist",
-    "declaration": true,
-    "module": "ES2015",
-    "moduleResolution": "node16",
-    "skipLibCheck": true
+    "module": "esnext",
+    "outDir": "dist/mjs",
+    "target": "esnext"
   }
 }
