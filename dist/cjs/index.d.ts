@@ -1,8 +1,8 @@
 export interface DailyRankingType {
-    img?: string;
+    img: string;
     brand: string;
-    name?: string;
+    name: string;
     price: string;
-    link?: string;
+    link: string;
 }
 export declare const getDailyRanking: () => Promise<DailyRankingType[] | []>;

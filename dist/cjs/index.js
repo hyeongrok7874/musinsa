@@ -20,11 +20,11 @@ const getDailyRanking = async () => {
         let dailyRanking = [];
         body.map((i, item) => {
             dailyRanking[i] = {
-                img: $(item).find(GET_IMG).attr("data-original"),
-                brand: $(item).find(GET_BRAND).text(),
-                name: $(item).find(GET_NAME_AND_LINK).attr("title"),
-                price: priceFilter($(item).find(GET_PRICE).text()),
-                link: $(item).find(GET_NAME_AND_LINK).attr("href"),
+                img: $(item).find(GET_IMG).attr("data-original") ?? "",
+                brand: $(item).find(GET_BRAND).text() ?? "",
+                name: $(item).find(GET_NAME_AND_LINK).attr("title") ?? "",
+                price: priceFilter($(item).find(GET_PRICE).text()) ?? "",
+                link: $(item).find(GET_NAME_AND_LINK).attr("href") ?? "",
             };
         });
         return dailyRanking.length > 0 ? dailyRanking : [];
