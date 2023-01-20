@@ -10,10 +10,10 @@ Provide ranking of musinsa.
 
 ```js
 // ES Module
-import { getDailyRanking, DailyRanking } from "musinsa";
+import { getDailyRanking, DailyRankingType } from "musinsa";
 
 // CommonJS
-const { getDailyRanking, DailyRanking } = require("musinsa");
+const { getDailyRanking, DailyRankingType } = require("musinsa");
 ```
 
 ### DailyRankingType
@@ -22,12 +22,27 @@ const { getDailyRanking, DailyRanking } = require("musinsa");
 
 ```ts
 interface DailyRankingType {
-  img?: string;
+  img: string;
   brand: string;
-  name?: string;
+  name: string;
   price: string;
-  link?: string;
+  link: string;
 }
+```
+
+return example
+
+```json
+[
+  {
+    img: 'https://image.msscdn.net/images/goods_img/20220412/2482269/2482269_1_125.jpg',
+    brand: '노스페이스',
+    name: 'NJ1DN75A 남성 1996 에코 눕시 자켓',
+    price: '339,000원',
+    link: 'https://www.musinsa.com/app/goods/2482269?loc=goods_rank'
+  },
+  ...
+]
 ```
 
 ### example
