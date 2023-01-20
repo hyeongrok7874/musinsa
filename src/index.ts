@@ -9,7 +9,7 @@ const GET_PRICE = "div.article_info p.price";
 
 const priceFilter = (price: string) => price.split("\n")[2].replace(/\s/g, "");
 
-export interface DailyRanking {
+export interface DailyRankingType {
   img?: string;
   brand: string;
   name?: string;
@@ -17,12 +17,12 @@ export interface DailyRanking {
   link?: string;
 }
 
-export const getDailyRanking = async (): Promise<DailyRanking[] | []> => {
+export const getDailyRanking = async (): Promise<DailyRankingType[] | []> => {
   try {
     const { data } = await axios.get(MUSINSA_DAILY);
     const $ = cheerio.load(data);
     const body = $("div.li_inner");
-    let dailyRanking: DailyRanking[] = [];
+    let dailyRanking: DailyRankingType[] = [];
     body.map((i, item) => {
       dailyRanking[i] = {
         img: $(item).find(GET_IMG).attr("data-original"),
