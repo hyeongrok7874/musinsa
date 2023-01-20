@@ -1,16 +1,15 @@
 {
   "name": "musinsa",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "Provide ranking of musinsa.",
   "author": "hyeongrok7874",
   "license": "ISC",
   "type": "module",
   "scripts": {
-    "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && ./fixup"
+    "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && ./fixup.sh"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
-  "types": "dist/mjs/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/mjs/index.js",
