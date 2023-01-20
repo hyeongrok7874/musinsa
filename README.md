@@ -16,12 +16,12 @@ import { getDailyRanking, DailyRanking } from "musinsa";
 const { getDailyRanking, DailyRanking } = require("musinsa");
 ```
 
-### DailyRanking
+### DailyRankingType
 
 일일 랭킹의 타입입니다.
 
 ```ts
-interface DailyRanking {
+interface DailyRankingType {
   img?: string;
   brand: string;
   name?: string;
@@ -35,7 +35,7 @@ interface DailyRanking {
 ```ts
 const getRanking = async () => {
   try {
-    const ranking: DailyRanking[] = await getDailyRanking();
+    const ranking: DailyRankingType[] = await getDailyRanking();
   } catch (e) {
     // error handling
   }
