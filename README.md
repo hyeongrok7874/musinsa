@@ -32,7 +32,7 @@ interface DailyRankingType {
 
 return example
 
-```json
+```js
 [
   {
     img: 'https://image.msscdn.net/images/goods_img/20220412/2482269/2482269_1_125.jpg',
