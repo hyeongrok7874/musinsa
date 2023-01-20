@@ -1,6 +1,6 @@
 {
   "name": "musinsa",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Provide ranking of musinsa.",
   "author": "hyeongrok7874",
   "license": "ISC",
@@ -10,6 +10,7 @@
   },
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
+  "types": "dist/mjs/index.d.ts",
   "exports": {
     ".": {
       "import": {
