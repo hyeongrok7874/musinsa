@@ -53,14 +53,6 @@ return example
 
 ### getRanking
 
-period type
-
-- now
-- day
-- week
-- month
-- month_3
-
 functions
 
 - getNowRanking
