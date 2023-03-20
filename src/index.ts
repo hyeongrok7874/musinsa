@@ -2,6 +2,11 @@ import axios from "axios";
 import cheerio from "cheerio";
 
 const MUSINSA_DAILY = "https://www.musinsa.com/ranking/best?period=day";
+const MUSINSA_NOW = "https://www.musinsa.com/ranking/best?period=now";
+const MUSINSA_WEEK = "https://www.musinsa.com/ranking/best?period=week";
+const MUSINSA_MONTH = "https://www.musinsa.com/ranking/best?period=month";
+const MUSINSA_MONTH_3 = "https://www.musinsa.com/ranking/best?period=month_3";
+
 const GET_IMG = "a.img-block > img";
 const GET_BRAND = "div.article_info p.item_title > a";
 const GET_NAME_AND_LINK = "div.article_info p.list_info > a";
