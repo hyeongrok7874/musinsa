@@ -4,24 +4,30 @@ Provide ranking of musinsa.
 
 ## Usage
 
-### getDailyRanking
+### package manager
 
-무신사의 일일 랭킹을 가져옵니다.
+```bash
+$ npm install musinsa
+$ yarn add musinsa
+$ pnpm add musinsa
+```
+
+### import
 
 ```js
 // ES Module
-import { getDailyRanking, DailyRankingType } from "musinsa";
+import { getDailyRanking, RankingType } from "musinsa";
 
 // CommonJS
-const { getDailyRanking, DailyRankingType } = require("musinsa");
+const { getDailyRanking, RankingType } = require("musinsa");
 ```
 
-### DailyRankingType
+### RankingType
 
 일일 랭킹의 타입입니다.
 
 ```ts
-interface DailyRankingType {
+interface RankingType {
   img: string;
   brand: string;
   name: string;
@@ -45,12 +51,30 @@ return example
 ]
 ```
 
-### example
+### getRanking
+
+period type
+
+- now
+- day
+- week
+- month
+- month_3
+
+functions
+
+- getNowRanking
+- getDailyRanking
+- getWeeklyRanking
+- getMonthlyRanking
+- get3MonthlyRanking
+
+## example
 
 ```ts
 const getRanking = async () => {
   try {
-    const ranking: DailyRankingType[] = await getDailyRanking();
+    const ranking: RankingType[] = await getDailyRanking();
   } catch (e) {
     // error handling
   }
