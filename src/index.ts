@@ -15,6 +15,7 @@ const GET_PRICE = "div.article_info p.price";
 const priceFilter = (price: string) => price.split("\n")[2].replace(/\s/g, "");
 
 export interface RankingType {
+  ranking: number;
   img: string;
   brand: string;
   name: string;
@@ -30,6 +31,7 @@ const getRanking = async (url: string): Promise<RankingType[] | []> => {
     let ranking: RankingType[] = [];
     body.map((i, item) => {
       ranking[i] = {
+        ranking: i + 1,
         img: $(item).find(GET_IMG).attr("data-original") ?? "",
         brand: $(item).find(GET_BRAND).text() ?? "",
         name: $(item).find(GET_NAME_AND_LINK).attr("title") ?? "",

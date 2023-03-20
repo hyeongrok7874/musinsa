@@ -1,4 +1,5 @@
 export interface RankingType {
+    ranking: number;
     img: string;
     brand: string;
     name: string;

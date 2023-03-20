@@ -24,6 +24,7 @@ const getRanking = async (url) => {
         let ranking = [];
         body.map((i, item) => {
             ranking[i] = {
+                ranking: i + 1,
                 img: $(item).find(GET_IMG).attr("data-original") ?? "",
                 brand: $(item).find(GET_BRAND).text() ?? "",
                 name: $(item).find(GET_NAME_AND_LINK).attr("title") ?? "",
