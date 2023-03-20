@@ -31,7 +31,6 @@ const getRanking = async (url) => {
                 link: $(item).find(GET_NAME_AND_LINK).attr("href") ?? "",
             };
         });
-        console.log(ranking);
         return ranking.length > 0 ? ranking : [];
     }
     catch (e) {
