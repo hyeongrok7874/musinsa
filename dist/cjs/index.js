@@ -5,37 +5,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.get3MonthlyRanking = exports.getMonthlyRanking = exports.getWeeklyRanking = exports.getDailyRanking = exports.getNowRanking = void 0;
 const axios_1 = __importDefault(require("axios"));
-const cheerio_1 = __importDefault(require("cheerio"));
-const MUSINSA_NOW = "https://www.musinsa.com/ranking/best?period=now";
-const MUSINSA_DAILY = "https://www.musinsa.com/ranking/best?period=day";
-const MUSINSA_WEEK = "https://www.musinsa.com/ranking/best?period=week";
-const MUSINSA_MONTH = "https://www.musinsa.com/ranking/best?period=month";
-const MUSINSA_MONTH_3 = "https://www.musinsa.com/ranking/best?period=month_3";
-const GET_IMG = "a.img-block > img";
-const GET_BRAND = "div.article_info p.item_title > a";
-const GET_NAME_AND_LINK = "div.article_info p.list_info > a";
-const GET_PRICE = "div.article_info p.price";
-const priceFilter = (price) => price.split("\n")[2].replace(/\s/g, "");
+const getMusinsaRankingURL = (period) => `https://ranking.musinsa.com/api/ranking/v1/goods/pan?period=${period}&size=100&goodsImageWidth=500&siteKindId=musinsa&newProduct=false&sex=A&age=ALL`;
+const MUSINSA_NOW = getMusinsaRankingURL("now");
+const MUSINSA_DAILY = getMusinsaRankingURL("day");
+const MUSINSA_WEEK = getMusinsaRankingURL("week");
+const MUSINSA_MONTH = getMusinsaRankingURL("month");
+const MUSINSA_MONTH_3 = getMusinsaRankingURL("month_3");
 const getRanking = async (url) => {
     try {
-        const { data } = await axios_1.default.get(url);
-        const $ = cheerio_1.default.load(data);
-        const body = $("div.li_inner");
-        let ranking = [];
-        body.map((i, item) => {
-            ranking[i] = {
-                ranking: i + 1,
-                img: $(item).find(GET_IMG).attr("data-original") ?? "",
-                brand: $(item).find(GET_BRAND).text() ?? "",
-                name: $(item).find(GET_NAME_AND_LINK).attr("title") ?? "",
-                price: priceFilter($(item).find(GET_PRICE).text()) ?? "",
-                link: $(item).find(GET_NAME_AND_LINK).attr("href") ?? "",
-            };
-        });
-        return ranking.length > 0 ? ranking : [];
+        const { data: { data: { goods }, }, } = await axios_1.default.get(url);
+        return goods.map(({ rank, thumbnailURL, brandName, goodsName, price, linkURL }) => ({
+            ranking: rank,
+            img: thumbnailURL,
+            brand: brandName,
+            name: goodsName,
+            price: price,
+            link: linkURL,
+        }));
     }
     catch (e) {
-        throw e;
+        return [];
     }
 };
 const getNowRanking = () => getRanking(MUSINSA_NOW);

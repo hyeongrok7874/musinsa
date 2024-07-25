@@ -32,7 +32,7 @@ interface RankingType {
   img: string;
   brand: string;
   name: string;
-  price: string;
+  price: number;
   link: string;
 }
 ```
