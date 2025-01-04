@@ -61,7 +61,6 @@ functions
 - getDailyRanking
 - getWeeklyRanking
 - getMonthlyRanking
-- get3MonthlyRanking
 
 ## example
 
